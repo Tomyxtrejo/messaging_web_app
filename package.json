@@ -1,0 +1,26 @@
+{
+  "name": "messaging_chat_app",
+  "version": "1.0.0",
+  "description": "Real time messaging application built with node js, socket.io, react js, express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neerajp99/chat_app.git"
+  },
+  "author": "neerajp99",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neerajp99/chat_app/issues"
+  },
+  "homepage": "https://github.com/neerajp99/chat_app#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "socket.io-client": "^2.3.0"
+  }
+}
