@@ -15,18 +15,19 @@ app.get("/", (req, res) => {
   res.json("jajja");
 });
 
-// Listen to the app
-server.listen(port, () => {
-  console.log(`App is running on port ${port}`);
-});
-
 // New connection
 io.on("connection", socket => {
-  console.log("New connection!!");
+  console.log("New connection!!", socket.id);
   // socket.emit("news", { hello: "world" });
   // socket.on("my other event", data => {
   //   console.log(data);
   // });
+  socket.on("disconnect", () => {
+    console.log("User had left!");
+  });
 });
 
-// Add body-parser middleware to get the requests object
+// Listen to the app
+server.listen(port, () => {
+  console.log(`App is running on port ${port}`);
+});
