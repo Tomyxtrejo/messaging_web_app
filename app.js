@@ -17,15 +17,22 @@ app.get("/", (req, res) => {
 
 // New connection
 io.on("connection", socket => {
-  console.log("New connection!!", socket.id);
-  // socket.emit("news", { hello: "world" });
-  // socket.on("my other event", data => {
-  //   console.log(data);
-  // });
-  socket.on("disconnect", () => {
-    console.log("User had left!");
-  });
+  console.log("New client connected", socket.id), setInterval(
+    () => getApiAndEmit(socket),
+    100
+  );
+  socket.on("disconnect", () => console.log("Client disconnected"));
 });
+
+// make the getApiAndEmit method
+const getApiAndEmit = (socket) => {
+  try{
+    let x = Math.random()
+    socket.emit("FromAPI", socket.id+x)
+  } catch (error){
+    console.log(error)
+  }
+}
 
 // Listen to the app
 server.listen(port, () => {
