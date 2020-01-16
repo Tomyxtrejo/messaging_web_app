@@ -1,5 +1,13 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --secondaryy: #202b41;
+  --primary: #1d2537;
+}
+
 .App {
   text-align: center;
+  /* overflow-y: hidden; */
 }
 
 .App-logo {
@@ -35,4 +43,206 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Laning page css goes here */
+.landing_header {
+  height: calc(1.7vh + 1.7vw + 1vmin);
+  background: #1d2537;
+  position: relative;
+  display: flex;
+}
+.landing_main {
+  height: calc(100vh - (1.7vh + 1.7vw + 1vmin));
+  background: #202b41;
+  display: flex;
+
+  flex-direction: row;
+}
+.landing_main_names {
+  flex-grow: 2;
+  /* background: yellow; */
+  border-right: 1.5px solid #1d2537 !important;
+}
+.landing_main_chats {
+  flex-grow: 4;
+  /* background: green; */
+  border-right: 1.5px solid #1d2537 !important;
+}
+.landing_main_details {
+  flex-grow: 2;
+}
+.landing_header_left {
+  flex-grow: 4;
+}
+.landing_header_right {
+  display: flex;
+  flex-grow: 1;
+}
+.landing_header_right_name {
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  font-size: 17px;
+  margin-top: 0.8%;
+  position: absolute;
+  right: 5%;
+}
+.landing_header_right_avatar {
+}
+.landing_header_right_avatar_image {
+  border-radius: 100%;
+  height: calc(1vh + 1vw + 1vmin);
+  position: absolute;
+  right: 2%;
+  top: 15%;
+}
+.landing_main_names_info {
+  position: relative;
+  top: 0;
+  height: calc(2.2vh + 2.2vw + 1vmin);
+  /* background: tomato; */
+  display: flex;
+}
+.landing_main_names_info_left {
+  /* display: flex; */
+  flex-grow: 3;
+}
+.landing_main_names_info_right {
+  /* display: flex; */
+  flex-grow: 2;
+  /* background: blue; */
+}
+.landing_main_names_info_left_avatar {
+  border-radius: 100%;
+  height: calc(1.3vh + 1.3vw + 1vmin);
+  position: absolute;
+  left: 2%;
+  top: 15%;
+}
+.landing_main_names_info_left_chat {
+  font-family: "Open Sans", sans-serif;
+  position: absolute;
+  left: 16%;
+  top: 27%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 24px;
+}
+.landing_main_names_info_right_gear {
+  font-size: calc(0.7vh + 0.7vw + 0.5vmin);
+  position: absolute;
+  right: 20%;
+  top: 27%;
+  color: #fff;
+}
+.landing_main_names_info_right_new {
+  font-size: calc(0.7vh + 0.7vw + 0.5vmin);
+  position: absolute;
+  right: 6%;
+  top: 27%;
+  color: #fff;
+}
+.landing_main_names_search_div {
+  display: flex;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  left: 1%;
+  background: var(--secondaryy);
+  border: 1px solid #949ba4;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 22.5%;
+  border-radius: 20px;
+  margin-top: 0.5%;
+}
+.landing_main_names_search {
+  border: 0px !important;
+  width: 145%;
+  background: transparent;
+  color: #949ba4;
+  font-family: "Roboto", sans-serif;
+}
+.landing_main_names_search_icon {
+  color: #949ba4;
+  line-height: 3.1vh;
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.landing_main_names_search::placeholder {
+  color: #949ba4;
+  opacity: 1;
+  font-family: "Roboto", sans-serif;
+}
+.landing_main_chat_show {
+  position: absolute;
+  /* background: tomato; */
+  width: 25%;
+  top: 20%;
+  height: 80vh;
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.landing_main_chat_list {
+  display: block;
+  /* list-style: none; */
+  position: absolute !important;
+  height: auto;
+  width: 100%;
+  margin-left: -5%;
+}
+.landing_main_chat_list_item {
+  height: 7vh;
+  width: 100%;
+  list-style-type: none;
+  position: relative;
+  /* left: -5%; */
+  /* margin: 0 auto; */
+  /* margin-left: 0 !important; */
+  margin-top: 3.5%;
+}
+.landing_main_chat_list_item_div {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  background: #1d2537;
+  height: 7vh;
+  border-radius: 10px;
+}
+.landing_main_chat_list_item_div_avatar {
+  flex-grow: 2;
+}
+.landing_main_chat_list_item_div_avatar_image {
+  /* position: absolute; */
+  border-radius: 100%;
+  height: calc(1.8vh + 1.8vw + 1vmin);
+  margin-top: 0.5vh;
+  padding-left: 10px;
+  width: calc(2.2vh + 2.2vw + 1vmin);
+}
+.landing_main_chat_list_item_div_details {
+  flex-grow: 3;
+  margin-left: 3%;
+  text-align: left;
+  position: absolute;
+  left: 20%;
+}
+.landing_main_chat_list_item_div_details_name {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 2vh;
+  line-height: 2px;
+  color: #fff;
+}
+.landing_main_chat_list_item_div_details_content {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #949ba4;
 }
