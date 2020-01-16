@@ -4,6 +4,7 @@ import one from "../utils/img/one.jpg";
 import two from "../utils/img/two.jpeg";
 import three from "../utils/img/three.jpg";
 import four from "../utils/img/four.jpg";
+import P2p from "./contents/P2p"
 
 class Landing extends Component {
   state = {
@@ -242,7 +243,9 @@ class Landing extends Component {
             </div>
           </div>
           <div className="landing_main_chats" />
-          <div className="landing_main_details" />
+          <div className="landing_main_details" >
+            <P2p />
+          </div>
         </div>
       </div>
     );
