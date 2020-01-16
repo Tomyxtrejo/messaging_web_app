@@ -85,7 +85,7 @@
   font-size: 17px;
   margin-top: 0.8%;
   position: absolute;
-  right: 5%;
+  right: 4%;
 }
 .landing_header_right_avatar {
 }
@@ -93,8 +93,15 @@
   border-radius: 100%;
   height: calc(1vh + 1vw + 1vmin);
   position: absolute;
-  right: 2%;
+  right: 11.5%;
   top: 15%;
+}
+
+.down-chevron{
+  color: #fff;
+  position: absolute;
+  right: 2.3%;
+  top: 35%;
 }
 .landing_main_names_info {
   position: relative;
@@ -122,7 +129,7 @@
 .landing_main_names_info_left_chat {
   font-family: "Open Sans", sans-serif;
   position: absolute;
-  left: 16%;
+  left: 5%;
   top: 27%;
   font-weight: 500;
   color: #fff;
@@ -149,15 +156,44 @@
   margin: 0 auto;
   left: 1%;
   background: var(--secondaryy);
-  border: 1px solid #949ba4;
-  line-height: 30px;
+  border: 1px solid #3f4b5f;
+  line-height: 35px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 2px;
   padding-bottom: 2px;
-  width: 22.5%;
-  border-radius: 20px;
+  width: 23%;
+  border-radius: 5px;
   margin-top: 0.5%;
+}
+.filter_chats{
+  position: absolute;
+  color: #fff;
+  display: flex;
+  margin-top: 3.5%;
+  flex-direction: row;
+  width: 25%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+
+}
+.down-chevron1{
+
+  -webkit-font-smoothing: antialiased;
+ -webkit-text-stroke: 0.1px white;
+}
+.recent_chat_filter{
+  flex-grow: 1;
+  position: absolute;
+  left: 5%;
+  font-weight: 400;
+}
+.new_chat_filter{
+  flex-grow: 1;
+  position: absolute;
+  right: 6%;
+  font-weight: 400;
+  font-weight: 400;
 }
 .landing_main_names_search {
   border: 0px !important;
@@ -165,17 +201,19 @@
   background: transparent;
   color: #949ba4;
   font-family: "Roboto", sans-serif;
+  font-size: 15px;
 }
 .landing_main_names_search_icon {
   color: #949ba4;
-  line-height: 3.1vh;
-  font-size: 20px;
+  line-height: 3.5vh;
+  font-size: 18px;
+  font-weight: 400;
   margin-left: 5px;
   margin-right: 5px;
 }
 
 .landing_main_names_search::placeholder {
-  color: #949ba4;
+  color: rgb(115, 123, 141);
   opacity: 1;
   font-family: "Roboto", sans-serif;
 }
@@ -184,10 +222,11 @@
   /* background: tomato; */
   width: 25%;
   top: 20%;
-  height: 80vh;
+  height: 80%;
   max-height: 80vh;
   overflow-y: auto;
   overflow-x: hidden;
+  line-height: inherit;
 }
 .landing_main_chat_list {
   display: block;
@@ -196,33 +235,72 @@
   height: auto;
   width: 100%;
   margin-left: -5%;
+  line-height: inherit;
 }
 .landing_main_chat_list_item {
-  height: 7vh;
+  height: 11%;
   width: 100%;
   list-style-type: none;
   position: relative;
   /* left: -5%; */
   /* margin: 0 auto; */
   /* margin-left: 0 !important; */
-  margin-top: 3.5%;
+  margin-top: 9%;
+  line-height: inherit;
 }
 .landing_main_chat_list_item_div {
   display: flex;
-  width: 100%;
+  width: 93%;
   margin: 0 auto;
   background: #1d2537;
-  height: 7vh;
-  border-radius: 10px;
+  height: 100%;
+  border-radius: 5px;
+  line-height: inherit;
+  margin-top: 10px;
 }
+.landing_main_chat_list_item_div:nth-child(3) {
+  background-color: #ff498c;
+}
+
+.landing_main_chat_list_item_div:nth-child(3)
+  > .landing_main_chat_list_item_div_details
+  > h7 {
+  color: #fff !important;
+}
+
+.landing_main_chat_list_item_div_avatar {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.landing_main_chat_list_item_div_avatar:after {
+  content: "";
+  position: absolute;
+  top: 1.5vh;
+  right: 0;
+  height: 13px;
+  width: 13px;
+  border-radius: 100%;
+  background: #2ecc71;
+}
+.landing_main_chat_list_item_div_details_settings {
+  color: #394153;
+  position: absolute;
+  right: 0;
+  top: 0.5vh;
+  font-size: 23px;
+}
+
 .landing_main_chat_list_item_div_avatar {
   flex-grow: 2;
+  position: absolute;
 }
 .landing_main_chat_list_item_div_avatar_image {
   /* position: absolute; */
   border-radius: 100%;
   height: calc(1.8vh + 1.8vw + 1vmin);
-  margin-top: 0.5vh;
+  margin-top: 1.3vh;
   padding-left: 10px;
   width: calc(2.2vh + 2.2vw + 1vmin);
 }
@@ -232,14 +310,26 @@
   text-align: left;
   position: absolute;
   left: 20%;
+  width: 70%;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 20;
 }
 .landing_main_chat_list_item_div_details_name {
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  margin-top: 2vh;
-  line-height: 2px;
   color: #fff;
+  line-height: 0.7;
+  /* flex: 1 1 0%; */
+  min-width: 0;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 20px;
 }
 .landing_main_chat_list_item_div_details_content {
   font-family: "Open Sans", sans-serif;
