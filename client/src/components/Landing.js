@@ -19,6 +19,7 @@ class Landing extends Component {
 
 
             <div className="landing_header_right_avatar">
+            <i className="far fa-bell header_notification"/>
               <img src={avatar} className="landing_header_right_avatar_image" />
             </div>
             <div className="landing_header_right_name">Neeraj Pandey</div>
