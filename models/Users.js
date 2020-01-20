@@ -17,7 +17,23 @@ const UserSchema = new Schema({
   createdDate: {
     type: Date,
     default: Date.now()
-  }
+  },
+  friends: [
+    {
+      name: {
+        type: String,
+        required: true
+      },
+      email: {
+        type: String,
+        required: true
+      },
+      unique_id: {
+        type: String,
+        required: true
+      }
+    }
+  ]
 });
 
 module.exports = User = mongoose.model("users", UserSchema);
