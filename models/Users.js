@@ -14,6 +14,12 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  biography: {
+    type: String
+  },
+  college: {
+    type: String
+  },
   createdDate: {
     type: Date,
     default: Date.now()
