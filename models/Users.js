@@ -33,6 +33,22 @@ const UserSchema = new Schema({
         required: true
       }
     }
+  ],
+  friendRequest: [
+    {
+      name: {
+        type: String,
+        required: true
+      },
+      email: {
+        type: String,
+        required: true
+      },
+      unique_id: {
+        type: String,
+        required: true
+      }
+    }
   ]
 });
 
