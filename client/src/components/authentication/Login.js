@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import InputField from "../commons/InputField";
-import google from "../../utils/img/google.png"
+import google from "../../utils/img/google.png";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { loginUser } from "../../actions/authAction";
 
 class Login extends Component {
   // State goes here
@@ -15,6 +19,32 @@ class Login extends Component {
       [event.target.name]: event.target.value
     });
   };
+
+  // Trigger this function when user submits the form
+  onSubmit = event => {
+    const userData = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    this.props.loginUser(userData, this.props.history);
+  };
+
+  // Lifecycle method to check if the user is authenticated
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/");
+    }
+  }
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/");
+    }
+
+    if (nextProps.error) {
+      this.setState({ errors: nextProps.error });
+    }
+  }
+
   render() {
     return (
       <div className="register">
@@ -50,11 +80,14 @@ class Login extends Component {
                 <div className="login_details_forgot">Forgot password?</div>
               </div>
 
-              <button className="register_details_submit_button btn btn-primary btn-lg">
+              <button
+                className="register_details_submit_button btn btn-primary btn-lg"
+                onClick={this.onSubmit}
+              >
                 Login
               </button>
               <button className="register_details_google btn btn-primary btn-lg">
-              <img src={google}  className="register_details_google_icon"/>
+                <img src={google} className="register_details_google_icon" />
                 LOGIN WITH GOOGLE
               </button>
             </div>
@@ -66,4 +99,17 @@ class Login extends Component {
   }
 }
 
-export default Login;
+// Add prop types
+Login.propTypes = {
+  auth: PropTypes.object.isRequired,
+  loginUser: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(withRouter(Login));
