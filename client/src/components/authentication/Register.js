@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import InputField from "../commons/InputField";
 
+import google from "../../utils/img/google.png"
+
 class Register extends Component {
   // State goes here
   state = {
@@ -56,6 +58,10 @@ class Register extends Component {
               />
               <button className="register_details_submit_button btn btn-primary btn-lg">
                 Register
+              </button>
+              <button className="register_details_google2 register_details_google  btn btn-primary btn-lg">
+              <img src={google}  className="register_details_google_icon"/>
+                LOGIN WITH GOOGLE
               </button>
             </div>
           </div>
