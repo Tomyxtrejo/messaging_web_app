@@ -1,16 +1,16 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import socketIOClient from "socket.io-client";
-import Landing from "./components/Landing"
+import Landing from "./components/Landing";
+import Register from "./components/authentication/Register";
+import Login from "./components/authentication/Login";
 
 class App extends Component {
-
-
-    state = {
-      response: false,
-      endpoint: "http://127.0.0.1:5009"
-    };
+  state = {
+    response: false,
+    endpoint: "http://127.0.0.1:5009"
+  };
 
   componentDidMount() {
     const { endpoint } = this.state;
@@ -20,14 +20,14 @@ class App extends Component {
   render() {
     const { response } = this.state;
     return (
-          <div className="app">
-            <Router>
-              <Route exact path = "/" render ={() => <Landing />} />
-            </Router>
-
-
-          </div>
-    )
+      <div className="app">
+        <Router>
+          <Route exact path="/" render={() => <Landing />} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path = "/login" component = {Login} />
+        </Router>
+      </div>
+    );
   }
 }
 export default App;
