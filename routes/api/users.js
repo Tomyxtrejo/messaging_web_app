@@ -28,7 +28,7 @@ router.post("/register", (req, res) => {
     else {
       // Create a new instance of the Schema and save the values to it
       const newUser = new User({
-        name: req.body.email,
+        name: req.body.name,
         email: req.body.email,
         password: req.body.password
       });
@@ -56,6 +56,65 @@ router.post("/register", (req, res) => {
       });
     }
   });
+});
+
+// ******************* ROUTE GOES HERE *******************
+
+// @route POST /api/users/login
+// @description Login User with passwort authentication
+// @access Public
+router.post("/login", (req, res) => {
+  // Pull out the email and password from the request body
+  const email = req.body.email;
+  const password = req.body.password;
+
+  // Search for the email in the database
+  User.findOne({
+    email: email
+  })
+    .then(user => {
+      // If email address is not present, throw error to register user
+      if (!user) {
+        return res.status(403).json("Email address not found!");
+      }
+      // If the email address found, decrypt the password before proceeding using the bcrypt .compare function
+      bcrypt
+        .compare(password, user.password)
+        .then(isMatch => {
+          // If the password matches
+          if (isMatch) {
+            // Create the payload for getting the Bearer tokens for authentication
+            const payload = {
+              name: user.name,
+              id: user.id
+            };
+
+            // Sign the token
+            jwt.sign(
+              payload,
+              keys.secretOrKey,
+              {
+                expiresIn: 10200
+              },
+              //callback as error and bearer token
+              (error, token) => {
+                res.json({
+                  success: true,
+                  token: "Bearer " + token
+                });
+              }
+            );
+          } else {
+            return res.status(400).json("Incorrect password!");
+          }
+        })
+        .catch(error => {
+          return res.json(error);
+        });
+    })
+    .catch(error => {
+      return res.json(error);
+    });
 });
 
 module.exports = router;
