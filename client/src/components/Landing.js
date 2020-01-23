@@ -5,6 +5,8 @@ import two from "../utils/img/two.jpeg";
 import three from "../utils/img/three.jpg";
 import four from "../utils/img/four.jpg";
 import P2p from "./contents/P2p"
+import search from "../utils/img/search.png"
+import P2pChats from "./contents/P2pChats"
 
 class Landing extends Component {
   state = {
@@ -50,7 +52,7 @@ class Landing extends Component {
                 placeholder="Search Vortex Chat"
                 className="landing_main_names_search"
               />
-              <i className="fa fa-search landing_main_names_search_icon " />
+              <i className="fa fa-lg fa-search landing_main_names_search_icon "/>
             </div>
             <div className="filter_chats">
               <div className="recent_chat_filter">Recent Chats <i className="fa fa-chevron-down down-chevron1" /></div>
@@ -243,7 +245,10 @@ class Landing extends Component {
               </div>
             </div>
           </div>
-          <div className="landing_main_chats" />
+          <div className="landing_main_chats">
+            <P2pChats />
+          </div>
+
           <div className="landing_main_details" >
             <P2p />
           </div>
