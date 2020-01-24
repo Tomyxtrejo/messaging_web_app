@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import three from "../../utils/img/three.jpg"
+import TextAreaFieldGroup from "../commons/TextField"
 
 class P2pChats extends Component {
   render() {
@@ -23,6 +24,15 @@ class P2pChats extends Component {
         </div>
         <div className="P2pChats_chats"></div>
         <div className="P2pChats_bottom">
+          <div className="P2pChats_bottom_more">
+          <i className="fas fa-plus plus-icon"></i>
+          </div>
+          <div className="P2pChats_bottom_message">
+          <textarea  className="textarea"/>
+          </div>
+          <div className="P2pChats_bottom_emoji"></div>
+          <div className="P2pChats_bottom_send"></div>
+
         </div>
       </div>
     )
