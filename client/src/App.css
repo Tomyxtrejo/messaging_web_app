@@ -57,7 +57,6 @@
   background: #202b41;
   display: flex;
 
-
   flex-direction: row;
 }
 .landing_main_names {
@@ -679,13 +678,12 @@ input[type="checkbox"]:checked + label:before {
 }
 
 /* Chats css goes here */
-.P2pChats{
+.P2pChats {
   height: 100%;
   width: 100%;
   position: relative;
-
 }
-.P2pChats_header{
+.P2pChats_header {
   width: 95%;
   height: 10%;
   background: #1d2537;
@@ -694,70 +692,107 @@ input[type="checkbox"]:checked + label:before {
   top: 3%;
   border-radius: 10px;
 }
-.P2pChats_header_left{
+.P2pChats_header_left {
   display: inline;
   width: 40%;
 }
-.P2pChats_header_right{
+.P2pChats_header_right {
   /* background: red; */
   display: inline-block;
   position: absolute;
   right: 0;
   width: 17%;
 }
-.P2pChats_header_left_avatar{
+.P2pChats_header_left_avatar {
   /* flex-grow: 1; */
   display: inline-block;
   position: absolute;
-
 }
-.P2pChats_header_left_avatar_image{
+.P2pChats_header_left_avatar_image {
   border-radius: 100%;
   height: calc(1.6vh + 1.6vw + 1.6vmin);
-  width :calc(1.6vh + 1.6vw + 1.6vmin);
+  width: calc(1.6vh + 1.6vw + 1.6vmin);
 
   position: relative;
   margin-left: 1vw;
   margin-top: 20%;
 }
-.P2pChats_header_left_details{
+.P2pChats_header_left_details {
   /* flex-grow: 2; */
   display: inline-block;
   position: absolute;
   left: 12%;
   color: #fff;
-  font-family: 'Montserrat', serif;
+  font-family: "Montserrat", serif;
   top: 18%;
 }
-.P2pChats_header_left_details_h5{
+.P2pChats_header_left_details_h5 {
   font-weight: 600;
   font-size: 1.5rem;
-
 }
 .P2pChats_header_left_details_h6 {
   font-size: 0.9rem !important;
   color: #818794;
   font-weight: 600;
+  line-height: 10px;
 }
-.P2pChats_header_right_video{
-  font-size: calc(0.8vw + 0.8vh + 1vmin);
+.P2pChats_header_right_video {
+  font-size: calc(0.6vw + 0.6vh + 0.8vmin);
+  color: var(--pink);
+  margin-top: 24%;
+}
+.P2pChats_header_right_audio {
+  font-size: calc(0.6vw + 0.6vh + 0.8vmin);
   color: var(--pink);
   margin-top: 20%;
+  margin-left: 24%;
 }
-.P2pChats_header_right_audio{
-  font-size: calc(0.8vw + 0.8vh + 1vmin);
-  color: var(--pink);
-  margin-top: 20%;
-  margin-left: 22%;
-}
-.P2pChats_chats{
+.P2pChats_chats {
   height: 70%;
   width: 95%;
   margin: 0 auto;
   background: var(--primaryy);
   margin-top: 6%;
   border-radius: 10px;
+  opacity: 0.4;
 }
-.P2pChats_bottom{
+.P2pChats_bottom {
+  height: 9%;
+  width: 95%;
+  background: var(--primaryy);
+  margin: 0 auto;
+  position: relative;
+  top: 3%;
+  border-radius: 10px;
+  display: flex;
+}
 
+.P2pChats_bottom_more{
+  /* background: red; */
+  flex-grow: 1;
+}
+.P2pChats_bottom_message{
+  background: blue;
+  flex-grow: 10;
+}
+.P2pChats_bottom_emoji{
+  background: green;
+  flex-grow: 2;
+}
+.P2pChats_bottom_send{
+  background: tomato;
+  flex-grow: 2;
+}
+.plus-icon{
+  font-size: calc(1vh + 1vw + 0.5vmin);
+  color: var(--pink);
+  text-align: center;
+  margin-top: 27%;
+  margin-left: 30%;
+
+}
+.textarea{
+  position: absolute;
+  width: 64%;
+  height: 40%;
 }
