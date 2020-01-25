@@ -22,16 +22,25 @@ class P2pChats extends Component {
           </div>
 
         </div>
-        <div className="P2pChats_chats"></div>
+        <div className="P2pChats_chats">
+
+          
+
+
+        </div>
         <div className="P2pChats_bottom">
           <div className="P2pChats_bottom_more">
           <i className="fas fa-plus plus-icon"></i>
           </div>
           <div className="P2pChats_bottom_message">
-          <textarea  className="textarea"/>
+          <textarea  className="textarea" placeholder="Type message here"/>
           </div>
-          <div className="P2pChats_bottom_emoji"></div>
-          <div className="P2pChats_bottom_send"></div>
+          <div className="P2pChats_bottom_emoji">
+            <i className="far fa-smile smile-icon"></i>
+          </div>
+          <div className="P2pChats_bottom_send">
+            <i className="fas fa-paper-plane send-icon"></i>
+          </div>
 
         </div>
       </div>
