@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import avatar from "../utils/img/avatar.jpg";
+import avatar from "../utils/img/neeraj.png";
 import one from "../utils/img/one.jpg";
 import two from "../utils/img/two.jpeg";
 import three from "../utils/img/three.jpg";
