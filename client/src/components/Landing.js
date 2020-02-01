@@ -13,6 +13,7 @@ class Landing extends Component {
     content: 'p2p'
   }
   render() {
+     console.log(this.props.userContent.updateState())
     return (
       <div className="landing">
         <div className="landing_header header">

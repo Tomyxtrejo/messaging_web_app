@@ -68,6 +68,7 @@ class Login extends Component {
                 placeholder="Enter Password"
                 onChange={this.onChange}
                 label="Password"
+                type="password"
               />
               <div className="login_details_extra_details">
                 <div className="login_details_checkbox">

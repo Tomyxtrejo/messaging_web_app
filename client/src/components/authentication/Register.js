@@ -78,6 +78,7 @@ class Register extends Component {
                 placeholder="Enter Password"
                 onChange={this.onChange}
                 label="Password"
+                type="password"
               />
               <InputField
                 name="password2"
@@ -85,6 +86,7 @@ class Register extends Component {
                 placeholder="Confirm Password"
                 onChange={this.onChange}
                 label="Confirm Password"
+                type="password"
               />
               <button
                 className="register_details_submit_button btn btn-primary btn-lg"
