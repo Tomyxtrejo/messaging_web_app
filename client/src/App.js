@@ -10,11 +10,13 @@ import { Provider } from "react-redux";
 import setAuthToken from "./utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import { setCurrentUser, logoutUser } from "./actions/authAction";
+import UserContent from "./UserContent";
 
 class App extends Component {
   state = {
     response: false,
-    endpoint: "http://127.0.0.1:5009"
+    endpoint: "http://127.0.0.1:5009",
+    userContent: new UserContent(this)
   };
 
   componentDidMount() {
@@ -41,14 +43,19 @@ class App extends Component {
         window.location.href = "/login";
       }
     }
+    console.log(this.state.userContent)
   }
   render() {
-    const { response } = this.state;
+    const { response, userContent } = this.state;
     return (
       <div className="app">
         <Provider store={store}>
           <Router>
-            <Route exact path="/" render={() => <Landing />} />
+            <Route
+              exact
+              path="/"
+              render={() => <Landing userContent={userContent} />}
+            />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
           </Router>
