@@ -9,6 +9,7 @@
     "axios": "^0.19.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.4.1",
+    "immutable": "^4.0.0-rc.12",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "passport": "^0.4.1",
