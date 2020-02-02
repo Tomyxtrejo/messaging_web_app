@@ -4,25 +4,30 @@ import one from "../utils/img/one.jpg";
 import two from "../utils/img/two.jpeg";
 import three from "../utils/img/three.jpg";
 import four from "../utils/img/four.jpg";
-import P2p from "./contents/P2p"
-import search from "../utils/img/search.png"
-import P2pChats from "./contents/P2pChats"
+import P2p from "./contents/P2p";
+import search from "../utils/img/search.png";
+import P2pChats from "./contents/P2pChats";
 
 class Landing extends Component {
   state = {
-    content: 'p2p'
-  }
+    content: "p2p"
+  };
   render() {
-     console.log(this.props.userContent.updateState())
+    const { userContent } = this.props;
+
+    // const messages = userContent.getMessages();
+    const activeChannel = userContent.getActiveChannel();
+    // const messages = userContent. getMessagesByChannelId(activeChannel);
+    const userChannels = userContent.getUserChannels();
+    const members = userContent.getMembersFromChannel(activeChannel);
+
     return (
       <div className="landing">
         <div className="landing_header header">
           <div className="landing_header_left" />
           <div className="landing_header_right">
-
-
             <div className="landing_header_right_avatar">
-            <i className="far fa-bell header_notification"/>
+              <i className="far fa-bell header_notification" />
               <img src={avatar} className="landing_header_right_avatar_image" />
             </div>
             <div className="landing_header_right_name">Neeraj Pandey</div>
@@ -41,10 +46,6 @@ class Landing extends Component {
                 <i className="fa fa-cog landing_main_names_info_right_gear" />
                 <i className="fa fa-user-plus landing_main_names_info_right_new" />
               </div>
-
-
-
-
             </div>
 
             <div className="landing_main_names_search_div">
@@ -53,12 +54,15 @@ class Landing extends Component {
                 placeholder="Search Vortex Chat"
                 className="landing_main_names_search"
               />
-              <i className="fa fa-lg fa-search landing_main_names_search_icon "/>
+              <i className="fa fa-lg fa-search landing_main_names_search_icon " />
             </div>
             <div className="filter_chats">
-              <div className="recent_chat_filter">Recent Chats <i className="fa fa-chevron-down down-chevron1" /></div>
-              <div className="new_chat_filter">New Chat <i className="fa fa-chevron-down down-chevron1" /></div>
-
+              <div className="recent_chat_filter">
+                Recent Chats <i className="fa fa-chevron-down down-chevron1" />
+              </div>
+              <div className="new_chat_filter">
+                New Chat <i className="fa fa-chevron-down down-chevron1" />
+              </div>
             </div>
             <div className="landing_main_chat_show">
               <div className="landing_main_chat_list_item">
@@ -250,7 +254,7 @@ class Landing extends Component {
             <P2pChats />
           </div>
 
-          <div className="landing_main_details" >
+          <div className="landing_main_details">
             <P2p />
           </div>
         </div>
