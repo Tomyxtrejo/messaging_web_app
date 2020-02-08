@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import three from "../../utils/img/three.jpg";
 import TextAreaFieldGroup from "../commons/TextField";
+import InstagramEmbed from "react-instagram-embed";
 
 class P2pChats extends Component {
   state = {
@@ -11,9 +12,9 @@ class P2pChats extends Component {
   onChangeMessage = event => {
     this.setState({
       newMessage: event.target.value
-    })
+    });
     // console.log(this.state.newMessage);
-  }
+  };
   render() {
     return (
       <div className="P2pChats">
@@ -40,7 +41,12 @@ class P2pChats extends Component {
             <i className="fas fa-plus plus-icon" />
           </div>
           <div className="P2pChats_bottom_message">
-            <textarea value = {this.state.newMessage} onChange = {this.onChangeMessage} className="textarea" placeholder="Type message here" />
+            <textarea
+              value={this.state.newMessage}
+              onChange={this.onChangeMessage}
+              className="textarea"
+              placeholder="Type message here"
+            />
           </div>
           <div className="P2pChats_bottom_emoji">
             <i className="far fa-smile smile-icon" />
