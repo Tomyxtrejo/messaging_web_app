@@ -21,6 +21,9 @@ class Landing extends Component {
     const userChannels = userContent.getUserChannels();
     const members = userContent.getMembersFromChannel(activeChannel);
 
+    // Create test messages
+
+
     return (
       <div className="landing">
         <div className="landing_header header">
