@@ -12,6 +12,13 @@ class Landing extends Component {
   state = {
     content: "p2p"
   };
+
+  // Create test messages
+  addTestMessages = () => {
+    // Destructuring the user store props
+    const { UserContent } = this.props;
+  };
+
   render() {
     const { userContent } = this.props;
 
@@ -20,9 +27,6 @@ class Landing extends Component {
     // const messages = userContent. getMessagesByChannelId(activeChannel);
     const userChannels = userContent.getUserChannels();
     const members = userContent.getMembersFromChannel(activeChannel);
-
-    // Create test messages
-
 
     return (
       <div className="landing">
